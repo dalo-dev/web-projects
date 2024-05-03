@@ -1,20 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --primary: #b5a1e5;
+  --on-primary: #100e17;
+  --background: #131214;
+  --on-background: #eae6f2;
+  --surface: #1d1c1f;
+  --on-surface: #dddae5;
+  --on-surface-variant: #7b7980;
+  --on-surface-variant-2: #b9b6bf;
+  --outline: #3e3d40;
+  --bg-aqi-1: #89e589;
+  --on-bg-aqi-1: #1f331f;
+  --bg-aqi-2: #e5dd89;
+  --on-bg-aqi-2: #33311f;
+  --bg-aqi-3: #e5c089;
+  --on-bg-aqi-3: #332b1f;
+  --bg-aqi-4: #e58989;
+  --on-bg-aqi-4: #331f1f;
+  --bg-aqi-5: #e589b7;
+  --on-bg-aqi-5: #331f29;
+  --white: hsl(0, 0%, 100%);
+  --white-alpha-4: hsla(0, 0%, 100%, 0.04);
+  --white-alpha-8: hsla(0, 0%, 100%, 0.08);
+  --black-alpha-10: hsla(0, 0%, 0%, 0.1);
+
+  font-family: "Fira Code", monospace;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: #eae6f2;
+  background-color: var(--background);
 }
 
 a {
@@ -58,7 +77,21 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
 .main-container {
+  background-color: var(--background);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
@@ -84,44 +117,4 @@ button:focus-visible {
   to {
     transform: rotate(0.5turn);
   }
-}
-
-.card {
-  width: 252px;
-  height: 265px;
-  background: white;
-  border-radius: 30px;
-  overflow: hidden;
-  /* box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff; */
-  transition: 0.2s ease-in-out;
-}
-
-.img {
-  width: 100%;
-  height: 50%;
-}
-
-.text {
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: space-around;
-}
-
-.text .h3 {
-  font-family: "Lucida Sans" sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: black;
-}
-
-.text .p {
-  font-family: "Lucida Sans" sans-serif;
-  color: #999999;
-  font-size: 13px;
-}
-
-.card:hover {
-  cursor: pointer;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }

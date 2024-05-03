@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
-import Project from "./Project";
+import Project from "./Project/Project";
 
-const gridStyles = {
-  overflowY: "scroll",
-  scrollbarWidth: "thin",
-  display: "grid",
-  gap: "1rem",
-};
+const gridStyles = {};
 
 export default function ProjectsList() {
   const [respositories, setRepositories] = useState([]);
@@ -36,7 +31,7 @@ export default function ProjectsList() {
           <div className="loader"></div>
         </div>
       ) : (
-        <ul className="py-5" style={gridStyles}>
+        <ul className="p-0" style={gridStyles}>
           {respositories.map((repo) => (
             <Project key={repo.id} project={repo} />
           ))}
