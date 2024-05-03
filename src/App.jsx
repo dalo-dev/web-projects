@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <div className="absolute top-0 h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
-        <div className="p-4 m-auto max-w-4xl h-full flex flex-col justify-between z-10">
+        <div className="p-4 m-auto max-w-4xl h-full z-10 main-container">
           <Header />
           <ProjectsList />
           <Footer />
