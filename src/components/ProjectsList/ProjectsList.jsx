@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Project from "./Project/Project";
+import Project from "../Project/Project";
 
 const gridStyles = {};
 
