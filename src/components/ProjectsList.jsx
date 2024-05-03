@@ -22,10 +22,10 @@ export default function ProjectsList() {
       const webDevRepos = data.filter((repo) =>
         repo.topics.includes("web-dev")
       );
-      console.log(webDevRepos);
       setRepositories(webDevRepos);
       setIsLoading(false);
     };
+
     getRepos();
   }, []);
 

@@ -5,7 +5,7 @@ import ProjectsList from "./components/ProjectsList";
 function App() {
   return (
     <>
-      <div className="absolute top-0 h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
+      <div className="absolute inset-0  h-full w-full items-center [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]">
         <div className="p-4 m-auto max-w-5xl h-full z-10 main-container">
           <Header />
           <ProjectsList />
@@ -17,3 +17,5 @@ function App() {
 }
 
 export default App;
+
+<div></div>;
