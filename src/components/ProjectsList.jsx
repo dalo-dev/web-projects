@@ -10,9 +10,11 @@ const gridStyles = {
 
 export default function ProjectsList() {
   const [respositories, setRepositories] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const getRepos = async function () {
+      setIsLoading(true);
       const response = await fetch(
         "https://api.github.com/users/dalo-dev/repos"
       );
@@ -22,15 +24,24 @@ export default function ProjectsList() {
       );
       console.log(webDevRepos);
       setRepositories(webDevRepos);
+      setIsLoading(false);
     };
     getRepos();
   }, []);
 
   return (
-    <ul className="py-5" style={gridStyles}>
-      {respositories.map((repo) => (
-        <Project key={repo.id} project={repo} />
-      ))}
-    </ul>
+    <>
+      {isLoading ? (
+        <div className="container">
+          <div className="loader"></div>
+        </div>
+      ) : (
+        <ul className="py-5" style={gridStyles}>
+          {respositories.map((repo) => (
+            <Project key={repo.id} project={repo} />
+          ))}
+        </ul>
+      )}
+    </>
   );
 }
