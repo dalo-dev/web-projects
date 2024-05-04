@@ -2,8 +2,6 @@
   background-color: #1d1c1f;
   border-radius: 1rem;
   overflow: hidden;
-  width: 300px;
-  cursor: pointer;
 
   .project-info {
     padding: 1rem;

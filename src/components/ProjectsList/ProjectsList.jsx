@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import Project from "../Project/Project";
 
-const gridStyles = {};
-
 export default function ProjectsList() {
   const [respositories, setRepositories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -31,11 +29,11 @@ export default function ProjectsList() {
           <div className="loader"></div>
         </div>
       ) : (
-        <ul className="p-0" style={gridStyles}>
+        <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto gap-4 p-2">
           {respositories.map((repo) => (
             <Project key={repo.id} project={repo} />
           ))}
-        </ul>
+        </div>
       )}
     </>
   );

@@ -5,12 +5,10 @@ import ProjectsList from "./components/ProjectsList/ProjectsList";
 function App() {
   return (
     <>
-      <div className="h-[100vh] w-[100vw]">
-        <div className="m-auto max-w-5xl h-full z-10 main-container">
-          <Header />
-          <ProjectsList />
-          <Footer />
-        </div>
+      <div className="min-w-[100vw] min-h-[100vh] main-container">
+        <Header />
+        <ProjectsList />
+        <Footer />
       </div>
     </>
   );

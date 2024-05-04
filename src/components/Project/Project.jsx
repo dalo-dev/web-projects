@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
 import "./Project.css";
 
 export default function Project({ project }) {
@@ -10,8 +11,14 @@ export default function Project({ project }) {
         src="https://raw.githubusercontent.com/dalo-dev/.dotfiles/main/Screenshots/Main.png"
         alt="Project Picture"
       />
-      <div className="project-info">
-        <h2> {project.name}</h2>
+      <div className="project-info px-4 py-2 ">
+        <h2>
+          {" "}
+          <a href={project.html_url}>{project.name}</a>
+        </h2>
+        <p className="text-sm line-clamp-3">
+          {project.description || "No description"}
+        </p>
         <ul className="flex p-0 list-none gap-3">
           {projectTechs.map((tech) => (
             <li key={`${project.id}-${tech}`}>
